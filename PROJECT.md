@@ -111,14 +111,14 @@ Accueil · Caméras · Réseau · Antennes · Informatique · Réalisations · C
 
 | Fichier | Rôle | Où |
 |---------|------|-----|
-| `logo.svg` | Wordmark horizontal · **un œil** + texte VIA**IP**CAM | Header desktop (≥ md) · footer |
-| `logo-mark.svg` | Symbole **double regard** (deux yeux symétriques) | Header mobile (< md) |
-| `logo-light.svg` | Wordmark sur fond foncé | Réservé (hero sombre, OG, etc.) |
+| `logo.svg` | Wordmark horizontal · **double regard** + texte VIA**IP**CAM | Header desktop (≥ md) · footer |
+| `logo-mark.svg` | Symbole **double regard** (même icône que le wordmark, sans texte) | Header mobile (< md) |
+| `logo-light.svg` | Wordmark sur fond foncé (ancienne version un œil — à mettre à jour) | Réservé (hero sombre, OG, etc.) |
 | `favicon.svg` | Un œil · pupille orange | Onglet navigateur |
 
 Couleur accent logo : `#ea580c` (alignée sur `cta`, pas sur `accent` bleu).
 
-Ratio intrinsèque : logo 312×80 · mark 204×108 · favicon 32×32.
+Ratio intrinsèque : logo 560×120 · mark 180×100 · favicon 32×32.
 
 ## Contenu source
 

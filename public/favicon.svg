@@ -1,7 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="16 18 68 68" width="32" height="32" role="img" aria-label="VIAIPCAM">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="37 21 52 52" width="32" height="32" role="img" aria-label="VIAIPCAM">
   <title>VIAIPCAM</title>
-  
-  <circle class="ring" cx="44" cy="56" r="19" fill="none" stroke="#1e293b" stroke-width="8"></circle>
-  <circle cx="44" cy="56" r="6.5" fill="#ea580c"></circle>
-  <path class="ring" d="M73 44 A 30 30 0 0 0 56 27" fill="none" stroke="#1e293b" stroke-width="8" stroke-linecap="round"></path>
+  <g transform="translate(54,56)">
+    <circle cx="0" cy="0" r="17" fill="none" stroke="#1e293b" stroke-width="6"></circle>
+    <circle cx="0" cy="0" r="6" fill="#ea580c"></circle>
+    <path d="M24.6 -10.8 A27 27 0 0 0 7.5 -26" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round"></path>
+    <path d="M33.5 -14.7 A37 37 0 0 0 10 -35.5" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round"></path>
+  </g>
 </svg>
