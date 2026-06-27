@@ -2,6 +2,6 @@
   <title>VIAIPCAM</title>
   
   <circle class="ring" cx="44" cy="56" r="19" fill="none" stroke="#1e293b" stroke-width="8"></circle>
-  <circle cx="44" cy="56" r="6.5" fill="#2563eb"></circle>
+  <circle cx="44" cy="56" r="6.5" fill="#ea580c"></circle>
   <path class="ring" d="M73 44 A 30 30 0 0 0 56 27" fill="none" stroke="#1e293b" stroke-width="8" stroke-linecap="round"></path>
 </svg>

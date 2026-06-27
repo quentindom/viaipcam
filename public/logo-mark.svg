@@ -1,7 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="VIAIPCAM">
-  <title>VIAIPCAM — symbole</title>
-  <circle cx="46" cy="58" r="17" fill="none" stroke="#1e293b" stroke-width="6"></circle>
-  <circle cx="46" cy="58" r="6" fill="#2563eb"></circle>
-  <path d="M70.6 47.2 A 27 27 0 0 0 53.5 32" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round"></path>
-  <path d="M79.5 43.3 A 37 37 0 0 0 56 22.5" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round"></path>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="12 14 136 72" width="204" height="108" role="img" aria-label="VIAIPCAM — symbole double regard">
+  <title>VIAIPCAM — symbole symétrique (deux yeux)</title>
+  
+  <g transform="translate(54,56) scale(-1,1)">
+    <circle cx="0" cy="0" r="17" fill="none" stroke="#1e293b" stroke-width="6"></circle>
+    <circle cx="0" cy="0" r="6" fill="#ea580c"></circle>
+    <path d="M24.6 -10.8 A27 27 0 0 0 7.5 -26" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round"></path>
+    <path d="M33.5 -14.7 A37 37 0 0 0 10 -35.5" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round"></path>
+  </g>
+  
+  <g transform="translate(106,56)">
+    <circle cx="0" cy="0" r="17" fill="none" stroke="#1e293b" stroke-width="6"></circle>
+    <circle cx="0" cy="0" r="6" fill="#ea580c"></circle>
+    <path d="M24.6 -10.8 A27 27 0 0 0 7.5 -26" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round"></path>
+    <path d="M33.5 -14.7 A37 37 0 0 0 10 -35.5" fill="none" stroke="#1e293b" stroke-width="6" stroke-linecap="round"></path>
+  </g>
 </svg>

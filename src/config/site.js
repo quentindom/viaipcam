@@ -37,6 +37,7 @@ export const site = {
     logoLight: '/logo-light.svg',
     logoMark: '/logo-mark.svg',
     logoAlt: 'VIAIPCAM — Vincent Domenjoud, installateur indépendant',
+    logoMarkAlt: 'VIAIPCAM — symbole double regard',
     portrait: '/images/vincent-domenjoud.webp',
     portraitAlt: 'Vincent Domenjoud, installateur indépendant à Roanne',
     ogImage: '/og-image.png',

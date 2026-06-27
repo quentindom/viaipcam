@@ -101,11 +101,24 @@ Accueil · Caméras · Réseau · Antennes · Informatique · Réalisations · C
 
 | Token | Valeur | Usage |
 |-------|--------|-------|
-| `primary` | `#1e293b` | Titres, nav |
+| `primary` | `#1e293b` | Titres, nav, contours logo |
 | `surface` | `#f1f5f9` | Fond body |
-| `accent` | `#2563eb` | Liens, hovers (aligné logo) |
+| `accent` | `#2563eb` | Liens, hovers nav |
 | `text` | `#334155` | Corps |
-| `cta` | `#ea580c` | Boutons |
+| `cta` | `#ea580c` | Boutons (pills) · pupilles logo · « IP » dans le wordmark |
+
+## Identité visuelle (logos)
+
+| Fichier | Rôle | Où |
+|---------|------|-----|
+| `logo.svg` | Wordmark horizontal · **un œil** + texte VIA**IP**CAM | Header desktop (≥ md) · footer |
+| `logo-mark.svg` | Symbole **double regard** (deux yeux symétriques) | Header mobile (< md) |
+| `logo-light.svg` | Wordmark sur fond foncé | Réservé (hero sombre, OG, etc.) |
+| `favicon.svg` | Un œil · pupille orange | Onglet navigateur |
+
+Couleur accent logo : `#ea580c` (alignée sur `cta`, pas sur `accent` bleu).
+
+Ratio intrinsèque : logo 312×80 · mark 204×108 · favicon 32×32.
 
 ## Contenu source
 
