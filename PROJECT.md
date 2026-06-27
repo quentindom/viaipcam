@@ -1,6 +1,6 @@
 ## Objectif
 
-Site vitrine statique pour [VIAIPCAM](https://viaipcam.fr) — Vincent Domenjoud, installateur indépendant : caméras IP, alarmes, réseau, antennes et informatique en Auvergne-Rhône-Alpes.
+Site vitrine statique pour [VIAIPCAM](https://viaipcam.pages.dev) — Vincent Domenjoud, installateur indépendant : caméras IP, alarmes, réseau, antennes et informatique en Auvergne-Rhône-Alpes.
 
 **Approche :** design neuf. Vincent Domenjoud en premier, VIAIPCAM comme enseigne.
 
@@ -8,7 +8,7 @@ Site vitrine statique pour [VIAIPCAM](https://viaipcam.fr) — Vincent Domenjoud
 
 **En place :**
 
-- Base Astro + Tailwind v4
+- Site live : **[viaipcam.pages.dev](https://viaipcam.pages.dev)** (interim — domaine `viaipcam.fr` à brancher plus tard)
 - 9 pages : accueil, à propos, caméras, réseau, antennes, informatique, réalisations, contact, mentions-legales
 - Header (nav + menu mobile) + Footer
 - `src/config/site.js` (SSOT)
@@ -17,17 +17,63 @@ Site vitrine statique pour [VIAIPCAM](https://viaipcam.fr) — Vincent Domenjoud
 
 **À faire :**
 
-- Design visuel (hero.webp — à venir)
+- Hero bannière (`hero.webp`)
 - Contenu réalisations (photos réelles)
-- URL Google Business Profile dans `site.js`
 - Formulaire contact (Formspree ou autre — pas encore décidé)
-- Déploiement Cloudflare Pages
+- Domaine custom `viaipcam.fr` (quand accès DNS disponible)
 
 ## Stack
 
 - Astro v6 · Tailwind CSS v4 (`@theme` dans `src/styles/global.css`)
-- Déploiement cible : **Cloudflare Pages**
-- Repo Git : à initialiser
+- Déploiement : **Cloudflare Pages**
+- Repo Git : [github.com/quentindom/viaipcam](https://github.com/quentindom/viaipcam)
+
+## Déploiement Cloudflare Pages
+
+### 1. Créer le projet (dashboard)
+
+1. [Cloudflare Dashboard](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
+2. Autoriser GitHub si demandé, sélectionner le repo **`quentindom/viaipcam`**
+3. Branche de production : **`main`**
+
+### 2. Paramètres de build
+
+| Paramètre | Valeur |
+|-----------|--------|
+| Framework preset | **Astro** (ou None) |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
+| Root directory | `/` |
+| Node.js | **22** (via `.node-version`) |
+
+Aucune variable d'environnement requise pour l'instant.
+
+### 3. Après le premier déploiement
+
+- URL preview : `https://viaipcam.pages.dev` (déjà dans `site.js`)
+- Vérifier : accueil, redirections (`/extension-reseau` → `/reseau`), favicon, OG image
+
+### 4. Domaine custom `viaipcam.fr` (plus tard)
+
+Quand tu auras accès au domaine :
+
+1. Pages → projet **viaipcam** → **Custom domains** → ajouter `viaipcam.fr` et `www.viaipcam.fr`
+2. Mettre à jour `site.url` dans `src/config/site.js` → `https://viaipcam.fr`
+3. Commit + push → rebuild automatique
+4. DNS : si le domaine est chez Cloudflare, les enregistrements sont proposés automatiquement
+
+### 5. Redirections WordPress
+
+Les 301 sont dans `public/_redirects` (copié dans `dist/` au build). Cloudflare Pages les applique nativement.
+
+### Déploiement manuel (optionnel)
+
+```bash
+npm run build
+npx wrangler pages deploy dist --project-name=viaipcam
+```
+
+Nécessite `npx wrangler login` au préalable.
 
 ## URLs
 
