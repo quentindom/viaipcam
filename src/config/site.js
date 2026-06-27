@@ -8,7 +8,7 @@ export const site = {
   person: {
     full: 'Vincent Domenjoud',
   },
-  tagline: 'Installateur indépendant — caméras, réseau, antennes et informatique',
+  tagline: 'Installateur indépendant de caméras, réseau, antennes et informatique',
   slogan: 'Surveillance, réseau et sérénité numérique en Auvergne-Rhône-Alpes',
   schemaDescription:
     'Vincent Domenjoud, installateur indépendant : caméras IP, alarmes, réseau Wi-Fi et câblage, antennes et accompagnement informatique à Roanne, Lyon, Clermont-Ferrand et en Auvergne-Rhône-Alpes.',
@@ -74,14 +74,14 @@ export const site = {
         href: '/video-surveillance',
         title: 'Caméras & alarmes',
         description:
-          'Surveillance IP sans abonnement, alarmes connectées, live et différé depuis votre smartphone.',
+          'Surveillance IP <strong>sans abonnement</strong>, alarmes connectées, live et différé depuis votre smartphone.',
         image: '/images/camera-setup.webp',
       },
       {
         href: '/reseau',
         title: 'Réseau',
         description:
-          'Wi-Fi fiable partout chez vous, tirage de câbles et réseau filaire — particuliers et TPE.',
+          'Wi-Fi fiable partout chez vous, tirage de câbles et réseau filaire pour particuliers et TPE.',
         image: '/images/installation-tools.webp',
       },
     ],
@@ -110,7 +110,7 @@ export const site = {
 
   styles: {
     ctaButton:
-      'bg-cta hover:opacity-90 text-white px-8 py-4 rounded-full text-lg font-medium transition-all shadow-lg hover:shadow-xl',
+      'inline-flex items-center justify-center leading-none bg-cta hover:opacity-90 text-white px-8 py-3.5 rounded-full text-lg font-medium transition-all shadow-md hover:shadow-lg',
     ctaButtonSm:
       'px-4 py-2 sm:px-6 sm:py-2.5 bg-cta hover:opacity-90 text-white text-xs sm:text-sm font-medium rounded-full transition-all duration-200 whitespace-nowrap',
     ctaButtonFooter:
