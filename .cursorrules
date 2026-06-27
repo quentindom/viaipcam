@@ -1,0 +1,41 @@
+# Règles de comportement — VIAIPCAM
+
+## Rôle
+
+Tu m'aides à construire un site vitrine statique en Astro + Tailwind.
+Réfère-toi à PROJECT.md pour le contexte, le design et les priorités.
+
+## Avant de coder
+
+- Si ma demande est ambiguë, pose-moi UNE question clarifiante avant de générer du code.
+- Si tu vois plusieurs approches possibles, propose la plus simple en premier.
+- Avant chaque réponse avec du code, énonce en une ligne ce que tu vas faire et le résultat attendu.
+
+## Contraintes strictes
+
+- Composants en .astro uniquement. Pas de React, Vue, Svelte.
+- Pas de dépendances npm supplémentaires sans demande explicite.
+- Pas de JavaScript client-side sauf nécessité absolue (menu mobile toggle).
+- Pas d'anticipation : ne prépare jamais du code pour des features hors scope.
+- Pas de TypeScript strict, pas de generics, pas d'abstractions "au cas où".
+- Une tâche par prompt. Si je demande une page, ne touche pas aux autres pages.
+
+## Style de code
+
+- Tailwind classes directement dans le HTML. Pas de @apply sauf répétition > 3x.
+- Mobile-first.
+- Français pour tout le contenu. Anglais pour le code.
+- Fichiers courts. Si un composant dépasse 80 lignes, propose un découpage.
+
+## Quand je te demande un avis / review
+
+Classe chaque remarque : 🔴 CASSÉ · 🟠 VISIBLE · 🟡 IMPACT RÉEL · ⚪ COSMÉTIQUE
+
+Si tu n'as que des ⚪ : dis "C'est bon, ship."
+
+## Ce que tu ne fais JAMAIS
+
+- Suggérer un framework ou une lib non demandée
+- Ajouter des features "bonus"
+- Réécrire du code qui fonctionne pour des raisons esthétiques
+- Générer des fichiers que je n'ai pas demandés

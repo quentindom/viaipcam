@@ -1,0 +1,53 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { site } from '../config/site.js';
+---
+
+<PageLayout
+  title={`Contact | ${site.seo.titleSuffix}`}
+  description="Contactez Vincent Domenjoud pour un devis gratuit. Téléphone et email — Roanne, Lyon, Clermont-Ferrand et Auvergne-Rhône-Alpes."
+>
+  <h1 class="text-3xl font-bold text-primary mb-4">Contactez Vincent</h1>
+  <p class="text-slate-600 mb-8">
+    Pour toute demande de renseignements ou de devis, je vous réponds dans les plus brefs délais.
+  </p>
+
+  <div class="space-y-6 text-lg">
+    <p>
+      <span class="font-medium text-primary block mb-1">Téléphone</span>
+      <a href={`tel:${site.contact.phone}`} class="text-accent hover:underline text-2xl font-semibold">
+        {site.contact.phoneDisplay}
+      </a>
+    </p>
+    <p>
+      <span class="font-medium text-primary block mb-1">Email</span>
+      <a href={`mailto:${site.contact.email}`} class="text-accent hover:underline">
+        {site.contact.email}
+      </a>
+    </p>
+  </div>
+
+  <div class="mt-10 pt-8 border-t border-slate-200">
+    <h2 class="text-lg font-semibold text-primary mb-2">Zone d'intervention</h2>
+    <p class="text-slate-700">
+      Roanne, Lyon, Clermont-Ferrand et l'ensemble de l'Auvergne-Rhône-Alpes.
+    </p>
+  </div>
+
+  {site.googleBusiness && (
+    <p class="mt-6">
+      <a
+        href={site.googleBusiness}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent font-medium hover:underline"
+      >
+        Voir la fiche Google →
+      </a>
+    </p>
+  )}
+
+  <p class="mt-8 text-sm text-slate-500">
+    Formulaire en ligne : à venir.
+  </p>
+</PageLayout>

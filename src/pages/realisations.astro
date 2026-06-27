@@ -1,0 +1,39 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { site } from '../config/site.js';
+---
+
+<PageLayout
+  title={`Réalisations | ${site.seo.titleSuffix}`}
+  description="Exemples d'installations de caméras, réseau, antennes et accompagnement informatique par Vincent Domenjoud à Roanne et en Auvergne-Rhône-Alpes."
+>
+  <h1 class="text-3xl font-bold text-primary mb-4">Nos réalisations</h1>
+  <p class="text-slate-600 mb-10">
+    Quelques exemples de chantiers — photos et détails à compléter prochainement.
+  </p>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {site.realisations.map((item) => (
+      <figure class="bg-surface rounded-xl overflow-hidden border border-slate-200">
+        <img
+          src={item.image}
+          alt={`${item.title} — ${item.location}`}
+          class="w-full h-44 object-cover"
+          width="400"
+          height="176"
+          loading="lazy"
+        />
+        <figcaption class="p-4">
+          <p class="font-medium text-primary">{item.title}</p>
+          <p class="text-sm text-slate-500">{item.location}</p>
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+
+  <p class="mt-10 text-center">
+    <a href="/contact" class={site.styles.ctaButton + ' inline-block'}>
+      Discutons de votre projet
+    </a>
+  </p>
+</PageLayout>
