@@ -110,6 +110,14 @@ export const site = {
   ],
 
   styles: {
+    h1: 'text-3xl md:text-4xl font-bold text-primary mb-8',
+    h2: 'text-2xl font-bold text-primary mb-6',
+    h3: 'text-xl font-semibold text-primary mb-4',
+    h2Sub: 'text-lg font-semibold text-primary mb-2',
+    portrait:
+      'mx-auto rounded-3xl w-full max-w-[26rem] aspect-square object-cover shadow-2xl border-8 border-white mb-8',
+    secondaryButton:
+      'inline-flex items-center justify-center leading-none px-8 py-3.5 rounded-full text-lg font-medium border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all',
     ctaButton:
       'inline-flex items-center justify-center leading-none bg-cta hover:opacity-90 text-white px-8 py-3.5 rounded-full text-lg font-medium transition-all shadow-md hover:shadow-lg',
     ctaButtonSm:

@@ -7,34 +7,34 @@ import { site } from '../config/site.js';
   title="Mentions légales | VIAIPCAM"
   description="Mentions légales du site VIAIPCAM — éditeur, hébergeur, données personnelles, cookies."
 >
-  <h1 class="text-3xl font-bold text-primary mb-8">Mentions légales</h1>
+  <h1 class={site.styles.h1}>Mentions légales</h1>
 
   <div class="space-y-8 text-slate-700 leading-relaxed text-sm">
     <section>
-      <h2 class="text-lg font-semibold text-primary mb-2">Éditeur</h2>
+      <h2 class={site.styles.h2Sub}>Éditeur</h2>
       <p>Raison sociale : {site.name}</p>
       <p>Tél : {site.contact.phoneDisplay}</p>
       <p>Mail : {site.contact.email}</p>
     </section>
 
     <section>
-      <h2 class="text-lg font-semibold text-primary mb-2">Hébergeur</h2>
+      <h2 class={site.styles.h2Sub}>Hébergeur</h2>
       <p>OVH, 2 rue Kellermann 59100 Roubaix</p>
       <p class="mt-2 text-slate-500">(À mettre à jour lors du déploiement sur Cloudflare Pages.)</p>
     </section>
 
     <section>
-      <h2 class="text-lg font-semibold text-primary mb-2">Réalisation</h2>
+      <h2 class={site.styles.h2Sub}>Réalisation</h2>
       <p>À définir</p>
     </section>
 
     <section>
-      <h2 class="text-lg font-semibold text-primary mb-2">Loi applicable</h2>
+      <h2 class={site.styles.h2Sub}>Loi applicable</h2>
       <p>Le contenu de ce site est régi par la loi française.</p>
     </section>
 
     <section>
-      <h2 class="text-lg font-semibold text-primary mb-2">Données personnelles</h2>
+      <h2 class={site.styles.h2Sub}>Données personnelles</h2>
       <p>
         Les données collectées par le biais du site sont destinées exclusivement à {site.name}.
         Vous pouvez à tout moment exercer votre droit d'accès, d'opposition, de retrait et de
@@ -43,7 +43,7 @@ import { site } from '../config/site.js';
     </section>
 
     <section>
-      <h2 class="text-lg font-semibold text-primary mb-2">Cookies</h2>
+      <h2 class={site.styles.h2Sub}>Cookies</h2>
       <p>
         Le nouveau site statique n'utilise pas de cookies de tracking. Si des statistiques sont
         ajoutées ultérieurement, cette section sera mise à jour.
@@ -51,7 +51,7 @@ import { site } from '../config/site.js';
     </section>
 
     <section>
-      <h2 class="text-lg font-semibold text-primary mb-2">Propriété intellectuelle</h2>
+      <h2 class={site.styles.h2Sub}>Propriété intellectuelle</h2>
       <p>
         Toute reproduction du site ou de ses éléments sans accord écrit préalable de {site.name}
         est interdite.

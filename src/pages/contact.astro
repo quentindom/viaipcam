@@ -7,7 +7,16 @@ import { site } from '../config/site.js';
   title={`Contact | ${site.seo.titleSuffix}`}
   description="Contactez Vincent Domenjoud pour un devis gratuit. Téléphone et email — Roanne, Lyon, Clermont-Ferrand et Auvergne-Rhône-Alpes."
 >
-  <h1 class="text-3xl font-bold text-primary mb-4">Contactez Vincent</h1>
+  <img
+    src={site.assets.portrait}
+    alt={site.assets.portraitAlt}
+    class={site.styles.portrait}
+    width="416"
+    height="416"
+    loading="eager"
+  />
+
+  <h1 class={site.styles.h1}>Contactez Vincent</h1>
   <p class="text-slate-600 mb-8">
     Pour toute demande de renseignements ou de devis, je vous réponds dans les plus brefs délais.
   </p>
@@ -28,7 +37,7 @@ import { site } from '../config/site.js';
   </div>
 
   <div class="mt-10 pt-8 border-t border-slate-200">
-    <h2 class="text-lg font-semibold text-primary mb-2">Zone d'intervention</h2>
+    <h2 class={site.styles.h2Sub}>Zone d'intervention</h2>
     <p class="text-slate-700">
       Roanne, Lyon, Clermont-Ferrand et l'ensemble de l'Auvergne-Rhône-Alpes.
     </p>

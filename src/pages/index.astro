@@ -19,9 +19,9 @@ const areaLabel = site.areaServed.slice(0, 3).join(' · ');
         <img
           src={site.assets.portrait}
           alt={site.assets.portraitAlt}
-          class="mx-auto rounded-2xl w-full max-w-xs aspect-square object-cover shadow-xl border-4 border-white mb-8"
-          width="320"
-          height="320"
+          class={site.styles.portrait}
+          width="416"
+          height="416"
           fetchpriority="high"
           loading="eager"
         />
@@ -36,10 +36,7 @@ const areaLabel = site.areaServed.slice(0, 3).join(' · ');
           <a href={`tel:${site.contact.phone}`} class={site.styles.ctaButton}>
             {site.contact.phoneDisplay}
           </a>
-          <a
-            href="/contact"
-            class="inline-flex items-center justify-center leading-none px-8 py-3.5 rounded-full text-lg font-medium border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all"
-          >
+          <a href="/contact" class={site.styles.secondaryButton}>
             Demander un devis
           </a>
         </div>
@@ -51,7 +48,7 @@ const areaLabel = site.areaServed.slice(0, 3).join(' · ');
       </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-6 pb-8">
+    <section class="max-w-7xl mx-auto px-6 pb-16">
       <h2 class="text-2xl font-bold text-primary text-center mb-8">Mes prestations principales</h2>
       <div class="grid md:grid-cols-2 gap-8">
         {site.services.featured.map((service) => (
@@ -77,10 +74,7 @@ const areaLabel = site.areaServed.slice(0, 3).join(' · ');
           </a>
         ))}
       </div>
-    </section>
-
-    <section class="max-w-7xl mx-auto px-6 pb-16">
-      <div class="grid sm:grid-cols-2 gap-8">
+      <div class="grid sm:grid-cols-2 gap-8 mt-8">
         {site.services.secondary.map((service) => (
           <a
             href={service.href}
@@ -137,10 +131,7 @@ const areaLabel = site.areaServed.slice(0, 3).join(' · ');
         <p class="text-slate-300 leading-relaxed mb-6">
           Roanne, Lyon, Clermont-Ferrand et l'ensemble de l'Auvergne-Rhône-Alpes.
         </p>
-        <a
-          href={`mailto:${site.contact.email}`}
-          class="inline-flex items-center justify-center leading-none bg-cta hover:opacity-90 text-white px-8 py-3.5 rounded-full text-lg font-medium transition-all"
-        >
+        <a href={`mailto:${site.contact.email}`} class={site.styles.ctaButton}>
           {site.contact.email}
         </a>
       </div>
