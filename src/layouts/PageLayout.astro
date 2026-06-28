@@ -4,13 +4,13 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../config/site.js';
 
-const { title, description } = Astro.props;
+const { title, description, noindex = false, service = null } = Astro.props;
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} noindex={noindex} service={service}>
   <Header />
 
-  <main>
+  <main id="main-content">
     <section class="max-w-4xl mx-auto px-6 py-16">
       <div class="bg-white rounded-xl shadow p-8 md:p-10">
         <slot />

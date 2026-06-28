@@ -1,0 +1,16 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { site } from '../config/site.js';
+---
+
+<PageLayout title={`Message envoyé | ${site.seo.titleSuffix}`} noindex={true}>
+  <div class="text-center">
+    <h1 class={site.styles.h1}>Merci pour votre message</h1>
+    <p class="text-slate-700 leading-relaxed mb-10">
+      Votre message a bien été envoyé. {site.person.full} vous recontactera dans les plus brefs délais.
+    </p>
+    <a href="/" class={site.styles.ctaButton}>
+      Retour à l'accueil
+    </a>
+  </div>
+</PageLayout>

@@ -7,11 +7,13 @@ export const site = {
   name: 'VIAIPCAM',
   person: {
     full: 'Vincent Domenjoud',
+    fullCaps: 'Vincent DOMENJOUD',
   },
   tagline: 'Installateur indépendant de caméras, réseau, antennes et informatique',
   slogan: 'Surveillance, réseau et sérénité numérique en Auvergne-Rhône-Alpes',
   schemaDescription:
     'Vincent Domenjoud, installateur indépendant : caméras IP, alarmes, réseau Wi-Fi et câblage, antennes et accompagnement informatique à Roanne, Lyon, Clermont-Ferrand et en Auvergne-Rhône-Alpes.',
+  foundingDate: '2015-05',
 
   contact: {
     email: 'contact@viaipcam.fr',
@@ -21,6 +23,9 @@ export const site = {
   },
 
   address: {
+    street: '26 rue des aqueducs',
+    postalCode: '42300',
+    city: 'ROANNE',
     locality: 'Roanne',
     region: 'Auvergne-Rhône-Alpes',
     country: 'FR',
@@ -29,7 +34,26 @@ export const site = {
 
   legal: {
     copyrightYear: 2026,
+    siret: '38244969200039',
+    host: {
+      name: 'Cloudflare Pages',
+      company: 'Cloudflare, Inc.',
+      address: '101 Townsend St, San Francisco, CA 94107, USA',
+    },
+    credits: 'QLB',
   },
+
+  knowsAbout: [
+    'caméras IP',
+    'alarmes connectées',
+    'vidéosurveillance',
+    'réseau Wi-Fi',
+    'câblage réseau',
+    'antennes TNT',
+    'antennes paraboliques',
+    'accompagnement informatique',
+    'sauvegarde de données',
+  ],
 
   assets: {
     favicon: '/favicon.svg',
@@ -40,13 +64,19 @@ export const site = {
     logoMarkAlt: 'VIAIPCAM — symbole double regard',
     portrait: '/images/vincent-domenjoud.webp',
     portraitAlt: 'Vincent Domenjoud, installateur indépendant à Roanne',
-    ogImage: '/og-image.png',
-    ogImageAlt: 'VIAIPCAM — Vincent Domenjoud, installateur indépendant en Auvergne-Rhône-Alpes',
+    ogImage: '/og-image.webp',
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
+    ogImageAlt: 'VIAIPCAM — Votre installateur de confiance en Auvergne-Rhône-Alpes',
   },
 
   seo: {
     titleSuffix: 'Vincent Domenjoud',
+    titleSuffixLegal: 'VIAIPCAM',
     locale: 'fr_FR',
+    homeTitle: 'Vincent Domenjoud — caméras, réseau & informatique | Roanne',
+    homeDescription:
+      'Installateur indépendant à Roanne : caméras IP, alarmes, réseau Wi-Fi, antennes et informatique. Lyon, Clermont-Ferrand, AURA. Devis gratuit.',
   },
 
   social: {
@@ -56,6 +86,13 @@ export const site = {
 
   googleBusiness:
     'https://www.google.com/maps/place/Viaipcam+Roanne/@46.0407547,4.0708441,17z/data=!4m6!3m5!1s0x47f40f67fc9dc661:0xa92032749efed469!8m2!3d46.0407547!4d4.0708441!16s%2Fg%2F11ghpp4pfw',
+
+  integrations: {
+    formspree: {
+      action: 'https://formspree.io/f/xzdlgylw',
+      subject: 'Nouveau message — VIAIPCAM',
+    },
+  },
 
   nav: [
     { href: '/', label: 'Accueil' },
@@ -68,6 +105,29 @@ export const site = {
   ],
 
   footerExtra: [{ href: '/a-propos', label: 'À propos' }],
+
+  serviceSchemas: {
+    '/video-surveillance': {
+      name: 'Installation caméras IP et alarmes',
+      description:
+        'Surveillance IP sans abonnement, alarmes connectées, live et différé depuis smartphone. Particuliers et TPE.',
+    },
+    '/reseau': {
+      name: 'Réseau Wi-Fi et câblage',
+      description:
+        'Extension Wi-Fi, points d\'accès, tirage de câbles Ethernet. Étude sur place pour particuliers et TPE.',
+    },
+    '/antennes': {
+      name: 'Antennes TNT et satellite',
+      description:
+        'Installation et dépannage d\'antennes TNT et parabolique. Conseils avant travaux ou rénovation.',
+    },
+    '/accompagnement-informatique': {
+      name: 'Accompagnement informatique',
+      description:
+        'Sauvegarde, optimisation, formation et anticipation numérique à domicile pour particuliers et TPE.',
+    },
+  },
 
   services: {
     featured: [

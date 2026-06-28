@@ -2,10 +2,17 @@
 import '../styles/global.css';
 import { site } from '../config/site.js';
 
-const { title, description, noindex = false } = Astro.props;
+const { title, description, noindex = false, service = null } = Astro.props;
 const siteUrl = Astro.site?.href.replace(/\/$/, '') ?? '';
 const pageUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : Astro.url.href;
 const ogImageUrl = Astro.site ? new URL(site.assets.ogImage, Astro.site).href : site.assets.ogImage;
+
+const provider = {
+  '@type': 'LocalBusiness',
+  name: `${site.person.full} — ${site.name}`,
+  telephone: site.contact.phone,
+  url: siteUrl,
+};
 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
@@ -16,20 +23,36 @@ const localBusinessSchema = {
   image: ogImageUrl,
   telephone: site.contact.phone,
   email: site.contact.email,
+  foundingDate: site.foundingDate,
   slogan: site.slogan,
   address: {
     '@type': 'PostalAddress',
+    streetAddress: site.address.street,
     addressLocality: site.address.locality,
     addressRegion: site.address.region,
+    postalCode: site.address.postalCode,
     addressCountry: site.address.country,
   },
   areaServed: site.areaServed,
+  knowsAbout: site.knowsAbout,
   sameAs: [
     site.social.facebook,
     site.social.linkedin,
     ...(site.googleBusiness ? [site.googleBusiness] : []),
   ],
 };
+
+const serviceSchema = service
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: service.name,
+      description: service.description,
+      url: pageUrl,
+      provider,
+      areaServed: site.areaServed,
+    }
+  : null;
 ---
 
 <html lang={site.lang}>
@@ -48,11 +71,23 @@ const localBusinessSchema = {
     {description && <meta property="og:description" content={description} />}
     <meta property="og:url" content={pageUrl} />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content={String(site.assets.ogImageWidth)} />
+    <meta property="og:image:height" content={String(site.assets.ogImageHeight)} />
     <meta property="og:image:alt" content={site.assets.ogImageAlt} />
     <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+    {serviceSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    )}
     <title>{title}</title>
   </head>
   <body class="bg-surface text-text font-sans antialiased">
+    <a
+      href="#main-content"
+      class="fixed left-4 top-4 z-[100] -translate-y-[200%] rounded-lg bg-white px-4 py-2 text-sm font-medium text-primary shadow-lg transition-transform focus:translate-y-0"
+    >
+      Aller au contenu principal
+    </a>
     <slot />
   </body>
 </html>

@@ -1,11 +1,13 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { site } from '../config/site.js';
+
+const legalAddress = `${site.address.street} — ${site.address.postalCode} ${site.address.city}`;
 ---
 
 <PageLayout
-  title="Mentions légales | VIAIPCAM"
-  description="Mentions légales du site VIAIPCAM — éditeur, hébergeur, données personnelles, cookies."
+  title={`Mentions légales | ${site.seo.titleSuffixLegal}`}
+  description={`Mentions légales du site ${site.name} — éditeur, hébergeur, données personnelles, cookies.`}
 >
   <h1 class={site.styles.h1}>Mentions légales</h1>
 
@@ -13,19 +15,22 @@ import { site } from '../config/site.js';
     <section>
       <h2 class={site.styles.h2Sub}>Éditeur</h2>
       <p>Raison sociale : {site.name}</p>
+      <p>Représentant : {site.person.fullCaps}</p>
+      <p>SIRET : {site.legal.siret}</p>
+      <p>Siège social : {legalAddress}</p>
       <p>Tél : {site.contact.phoneDisplay}</p>
       <p>Mail : {site.contact.email}</p>
     </section>
 
     <section>
       <h2 class={site.styles.h2Sub}>Hébergeur</h2>
-      <p>OVH, 2 rue Kellermann 59100 Roubaix</p>
-      <p class="mt-2 text-slate-500">(À mettre à jour lors du déploiement sur Cloudflare Pages.)</p>
+      <p>{site.legal.host.name} — {site.legal.host.company}</p>
+      <p>{site.legal.host.address}</p>
     </section>
 
     <section>
       <h2 class={site.styles.h2Sub}>Réalisation</h2>
-      <p>À définir</p>
+      <p>{site.legal.credits}</p>
     </section>
 
     <section>
@@ -45,7 +50,7 @@ import { site } from '../config/site.js';
     <section>
       <h2 class={site.styles.h2Sub}>Cookies</h2>
       <p>
-        Le nouveau site statique n'utilise pas de cookies de tracking. Si des statistiques sont
+        Le site statique n'utilise pas de cookies de tracking. Si des statistiques sont
         ajoutées ultérieurement, cette section sera mise à jour.
       </p>
     </section>

@@ -13,14 +13,19 @@ Site vitrine statique pour [VIAIPCAM](https://viaipcam.pages.dev) — Vincent Do
 - Header (nav + menu mobile) + Footer
 - `src/config/site.js` (SSOT)
 - Redirections 301 dans `public/_redirects`
-- Contenu source dans `docs/content/` · images dans `public/images/`
+- Formulaire contact (Formspree → `/merci`)
+- Images dans `public/images/`
+- Image Open Graph (`public/og-image.webp`) — aperçu lors du partage sur réseaux sociaux / messageries
+- SEO : sitemap filtré, OG image, JSON-LD LocalBusiness + Service, meta accueil optimisées
+- Mentions légales branchées sur `site.js`
+- Script Lighthouse (`scripts/lighthouse-mobile.mjs`)
+- Skip link, nav active, `.node-version`
 
 **À faire :**
 
-- Hero bannière (`hero.webp`)
 - Contenu réalisations (photos réelles)
-- Formulaire contact (Formspree ou autre — pas encore décidé)
-- Domaine custom `viaipcam.fr` (quand accès DNS disponible)
+- `logo-light.svg` (version double regard)
+- Domaine custom `viaipcam.fr` (quand accès DNS disponible — mettre à jour `site.url`, `robots.txt`, `llms.txt`)
 
 ## Stack
 
@@ -103,9 +108,9 @@ Accueil · Caméras · Réseau · Antennes · Informatique · Réalisations · C
 |-------|--------|-------|
 | `primary` | `#1e293b` | Titres, nav, contours logo |
 | `surface` | `#f1f5f9` | Fond body |
-| `accent` | `#2563eb` | Liens, hovers nav |
+| `accent` | `#d0440a` | Liens, hovers nav (contraste AA 4,65:1 sur blanc) |
 | `text` | `#334155` | Corps |
-| `cta` | `#d0440a` | Boutons (pills) · pupilles logo · « IP » dans le wordmark (contraste AA 4,65:1 sur blanc) |
+| `cta` | `#d0440a` | Boutons (pills) · pupilles logo · « IP » dans le wordmark |
 
 ## Identité visuelle (logos)
 
@@ -113,21 +118,29 @@ Accueil · Caméras · Réseau · Antennes · Informatique · Réalisations · C
 |---------|------|-----|
 | `logo.svg` | Wordmark horizontal · **double regard** + texte VIA**IP**CAM | Header desktop (≥ md) · footer |
 | `logo-mark.svg` | Symbole **double regard** (même icône que le wordmark, sans texte) | Header mobile (< md) |
-| `logo-light.svg` | Wordmark sur fond foncé (ancienne version un œil — à mettre à jour) | Réservé (hero sombre, OG, etc.) |
+| `logo-light.svg` | Wordmark sur fond foncé (ancienne version un œil — à mettre à jour) | Réservé (fond sombre, etc.) |
 | `favicon.svg` | Un œil · pupille orange | Onglet navigateur |
 
-Couleur accent logo : `#d0440a` (alignée sur `cta`, pas sur `accent` bleu).
+Couleur accent logo : `#d0440a` (alignée sur `accent` et `cta`).
 
 Ratio intrinsèque : logo 560×120 · mark 180×100 · favicon 32×32.
 
-## Contenu source
+## Contenu & assets
 
-- Textes : `docs/content/*.md` (extraits WordPress + placeholders)
-- Assets marque : `public/logo.svg` · `logo-light.svg` · `logo-mark.svg` · `favicon.svg` · `og-image.png`
+- Assets marque : `public/logo.svg` · `logo-light.svg` · `logo-mark.svg` · `favicon.svg` · `favicon.png` · `og-image.webp`
 - Images : `public/images/` — `vincent-domenjoud.webp` · `cctv-concept.webp` · `camera-setup.webp` · `camera-setup-2.webp` · `installation-tools.webp`
+
+## Lighthouse (local)
+
+```bash
+npm run dev
+node scripts/lighthouse-mobile.mjs http://127.0.0.1:4321
+```
+
+Rapports JSON dans `lighthouse-reports/`. Nécessite `lighthouse` et `chrome-launcher` (install globale ou `npx`). Variable `CHROME_PATH` optionnelle.
 
 ## Zone d'intervention
 
 Roanne · Lyon · Clermont-Ferrand · Auvergne-Rhône-Alpes
 
-Dernière mise à jour : 27 juin 2026
+Dernière mise à jour : 28 juin 2026

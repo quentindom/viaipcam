@@ -7,7 +7,11 @@ import { site } from './src/config/site.js';
 
 export default defineConfig({
   site: site.url,
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => !new URL(page).pathname.startsWith('/merci'),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

@@ -1,6 +1,9 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
 import { site } from '../config/site.js';
+
+const inputClass =
+  'w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/40';
 ---
 
 <PageLayout
@@ -18,10 +21,10 @@ import { site } from '../config/site.js';
 
   <h1 class={site.styles.h1}>Contactez Vincent</h1>
   <p class="text-slate-600 mb-8">
-    Pour toute demande de renseignements ou de devis, je vous réponds dans les plus brefs délais.
+    Je vous réponds dans les plus brefs délais pour toute demande de renseignements ou de devis.
   </p>
 
-  <div class="space-y-6 text-lg">
+  <div class="space-y-6 text-lg mb-10 pb-10 border-b border-slate-200">
     <p>
       <span class="font-medium text-primary block mb-1">Téléphone</span>
       <a href={`tel:${site.contact.phone}`} class="text-accent hover:underline text-2xl font-semibold">
@@ -35,6 +38,65 @@ import { site } from '../config/site.js';
       </a>
     </p>
   </div>
+
+  <section>
+    <h2 class={site.styles.h2Sub}>Envoyez un message</h2>
+
+    <form
+      class="mt-6 space-y-5"
+      method="POST"
+      action={site.integrations.formspree.action}
+    >
+      <input type="hidden" name="_subject" value={site.integrations.formspree.subject} />
+      <input type="hidden" name="_next" value={`${site.url}/merci`} />
+      <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
+      <div>
+        <label for="nom" class="block text-sm font-medium text-primary mb-2">
+          Nom <span class="text-accent">*</span>
+        </label>
+        <input type="text" id="nom" name="nom" required class={inputClass} />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-primary mb-2">
+          Email <span class="text-accent">*</span>
+        </label>
+        <input type="email" id="email" name="email" required class={inputClass} />
+      </div>
+
+      <div>
+        <label for="telephone" class="block text-sm font-medium text-primary mb-2">
+          Téléphone <span class="text-accent">*</span>
+        </label>
+        <input type="tel" id="telephone" name="telephone" required class={inputClass} />
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-primary mb-2">
+          Message <span class="text-accent">*</span>
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          required
+          class={`${inputClass} resize-y`}
+        ></textarea>
+      </div>
+
+      <button type="submit" class={`w-full ${site.styles.ctaButton}`}>
+        Envoyer
+      </button>
+
+      <p class="text-sm text-slate-500 text-center">
+        Vos données sont utilisées uniquement pour répondre à votre demande.{' '}
+        <a href="/mentions-legales" class="text-accent hover:underline">
+          Politique de confidentialité
+        </a>
+      </p>
+    </form>
+  </section>
 
   <div class="mt-10 pt-8 border-t border-slate-200">
     <h2 class={site.styles.h2Sub}>Zone d'intervention</h2>
@@ -55,8 +117,4 @@ import { site } from '../config/site.js';
       </a>
     </p>
   )}
-
-  <p class="mt-8 text-sm text-slate-500">
-    Formulaire en ligne : à venir.
-  </p>
 </PageLayout>

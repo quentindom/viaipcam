@@ -1,5 +1,17 @@
 ---
 import { site } from '../config/site.js';
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+function isNavActive(href) {
+  if (href === '/') return currentPath === '/';
+  return currentPath === href || currentPath.startsWith(`${href}/`);
+}
+
+function navLinkClass(href) {
+  const base = 'hover:text-accent transition-colors';
+  return isNavActive(href) ? `${base} text-accent font-semibold` : base;
+}
 ---
 
 <header class="bg-white border-b border-slate-200 sticky top-0 z-50 relative">
@@ -38,9 +50,15 @@ import { site } from '../config/site.js';
         </svg>
       </button>
 
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-primary">
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-primary" aria-label="Navigation principale">
         {site.nav.map((link) => (
-          <a href={link.href} class="hover:text-accent transition-colors">{link.label}</a>
+          <a
+            href={link.href}
+            class={navLinkClass(link.href)}
+            aria-current={isNavActive(link.href) ? 'page' : undefined}
+          >
+            {link.label}
+          </a>
         ))}
       </nav>
 
@@ -55,9 +73,16 @@ import { site } from '../config/site.js';
     class="md:hidden absolute left-0 right-0 top-full bg-white border-b border-slate-200 shadow-lg overflow-hidden transition-all duration-300 ease-out max-h-0 opacity-0 pointer-events-none"
     aria-hidden="true"
   >
-    <nav class="px-6 py-4 flex flex-col gap-4 text-sm font-medium text-primary">
+    <nav class="px-6 py-4 flex flex-col gap-4 text-sm font-medium text-primary" aria-label="Navigation principale">
       {site.nav.map((link) => (
-        <a href={link.href} tabindex="-1" class="hover:text-accent transition-colors py-1">{link.label}</a>
+        <a
+          href={link.href}
+          tabindex="-1"
+          class={`${navLinkClass(link.href)} py-1`}
+          aria-current={isNavActive(link.href) ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
       ))}
     </nav>
   </div>
