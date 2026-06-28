@@ -1,0 +1,24 @@
+# VIAIPCAM — Vincent Domenjoud
+
+> Installateur indépendant de caméras IP, alarmes, réseau Wi-Fi et câblage,
+> antennes et accompagnement informatique en Auvergne-Rhône-Alpes.
+> Enseigne : VIAIPCAM. Artisan solo, interventions surtout par recommandation.
+> Devis gratuit après étude sur place — particuliers et TPE.
+
+## Pages
+
+- [Accueil](https://viaipcam.pages.dev/)
+- [À propos](https://viaipcam.pages.dev/a-propos/)
+- [Caméras & alarmes](https://viaipcam.pages.dev/video-surveillance/)
+- [Réseau](https://viaipcam.pages.dev/reseau/)
+- [Antennes](https://viaipcam.pages.dev/antennes/)
+- [Informatique](https://viaipcam.pages.dev/accompagnement-informatique/)
+- [Réalisations](https://viaipcam.pages.dev/realisations/)
+- [Contact](https://viaipcam.pages.dev/contact/)
+
+## Contact
+
+- Téléphone : +33685762772
+- Email : contact@viaipcam.fr
+- Zone d'intervention : Roanne, Lyon, Clermont-Ferrand, Loire,
+  Auvergne-Rhône-Alpes

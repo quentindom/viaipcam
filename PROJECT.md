@@ -105,7 +105,7 @@ Accueil · Caméras · Réseau · Antennes · Informatique · Réalisations · C
 | `surface` | `#f1f5f9` | Fond body |
 | `accent` | `#2563eb` | Liens, hovers nav |
 | `text` | `#334155` | Corps |
-| `cta` | `#ea580c` | Boutons (pills) · pupilles logo · « IP » dans le wordmark |
+| `cta` | `#d0440a` | Boutons (pills) · pupilles logo · « IP » dans le wordmark (contraste AA 4,65:1 sur blanc) |
 
 ## Identité visuelle (logos)
 
@@ -116,7 +116,7 @@ Accueil · Caméras · Réseau · Antennes · Informatique · Réalisations · C
 | `logo-light.svg` | Wordmark sur fond foncé (ancienne version un œil — à mettre à jour) | Réservé (hero sombre, OG, etc.) |
 | `favicon.svg` | Un œil · pupille orange | Onglet navigateur |
 
-Couleur accent logo : `#ea580c` (alignée sur `cta`, pas sur `accent` bleu).
+Couleur accent logo : `#d0440a` (alignée sur `cta`, pas sur `accent` bleu).
 
 Ratio intrinsèque : logo 560×120 · mark 180×100 · favicon 32×32.
 

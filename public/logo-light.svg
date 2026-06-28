@@ -2,9 +2,9 @@
   <title>VIAIPCAM — logo horizontal (fond foncé)</title>
   <g transform="translate(6,8) scale(0.64)">
     <circle cx="46" cy="58" r="17" fill="none" stroke="#ffffff" stroke-width="6"></circle>
-    <circle cx="46" cy="58" r="6" fill="#ea580c"></circle>
+    <circle cx="46" cy="58" r="6" fill="#d0440a"></circle>
     <path d="M70.6 47.2 A 27 27 0 0 0 53.5 32" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"></path>
     <path d="M79.5 43.3 A 37 37 0 0 0 56 22.5" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round"></path>
   </g>
-  <text x="84" y="54" font-family="&#39;Outfit&#39;,&#39;Segoe UI&#39;,system-ui,-apple-system,sans-serif" font-size="40" font-weight="700" letter-spacing="-0.4" fill="#ffffff">VIA<tspan fill="#ea580c">IP</tspan>CAM</text>
+  <text x="84" y="54" font-family="&#39;Outfit&#39;,&#39;Segoe UI&#39;,system-ui,-apple-system,sans-serif" font-size="40" font-weight="700" letter-spacing="-0.4" fill="#ffffff">VIA<tspan fill="#d0440a">IP</tspan>CAM</text>
 </svg>
