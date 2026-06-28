@@ -67,7 +67,7 @@ export const site = {
     ogImage: '/og-image.webp',
     ogImageWidth: 1200,
     ogImageHeight: 630,
-    ogImageAlt: 'VIAIPCAM — Votre installateur de confiance en Auvergne-Rhône-Alpes',
+    ogImageAlt: 'Vincent Domenjoud — VIAIPCAM, installateur de confiance à Roanne et en Auvergne-Rhône-Alpes',
   },
 
   seo: {
