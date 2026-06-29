@@ -13,7 +13,7 @@ Site vitrine statique pour [VIAIPCAM](https://viaipcam.pages.dev) — Vincent Do
 - Header (nav + menu mobile) + Footer
 - `src/config/site.js` (SSOT)
 - Redirections 301 dans `public/_redirects`
-- Formulaire contact (Formspree → `/merci`)
+- Formulaire contact (Formspree fetch JS → `/merci`, message d'erreur si échec)
 - Images dans `public/images/`
 - Image Open Graph (`public/og-image.webp`) — aperçu lors du partage sur réseaux sociaux / messageries
 - SEO : sitemap filtré, OG image, JSON-LD LocalBusiness + Service, meta accueil optimisées
@@ -107,10 +107,66 @@ Accueil · Caméras · Réseau · Antennes · Informatique · Réalisations · C
 | Token | Valeur | Usage |
 |-------|--------|-------|
 | `primary` | `#1e293b` | Titres, nav, contours logo |
-| `surface` | `#f1f5f9` | Fond body |
+| `surface` | `#faf8f6` | Fond body |
 | `accent` | `#d0440a` | Liens, hovers nav (contraste AA 4,65:1 sur blanc) |
 | `text` | `#334155` | Corps |
 | `cta` | `#d0440a` | Boutons (pills) · pupilles logo · « IP » dans le wordmark |
+
+## Espacements macro
+
+| Token | px | Classes | Usage |
+|-------|-----|---------|-------|
+| s | 32 | `p-8`, `space-y-5`, `space-y-8`, `mb-8` | Transitions section→section · padding cartes |
+| m | 64 | `py-16`, `pt-16`, `pb-16` | Hero → contenu ; fin de section |
+| l | 80 | `mt-20` (Footer) | Marge avant footer |
+
+## Patterns UI récurrents
+
+| Élément | Classes typiques |
+|---------|------------------|
+| Section page intérieure | `PageLayout` → `max-w-4xl mx-auto px-6 py-16` + carte `bg-white rounded-xl shadow p-8 md:p-10` |
+| Section accueil | `max-w-7xl mx-auto px-6` · hero `max-w-4xl mx-auto px-6 text-center` |
+| Carte service (accueil) | `bg-white rounded-2xl shadow overflow-hidden` ou `p-8` · hover `hover:shadow-lg transition` |
+| CTA principal | `site.styles.ctaButton` (`bg-cta hover:opacity-90 … rounded-full`) |
+| CTA secondaire | `site.styles.secondaryButton` (outline pill) |
+| Titres | `site.styles.h1` · `h2` · `h3` · `h2Sub` |
+
+Copier depuis une page existante, ne pas inventer.
+
+## `src/config/site.js`
+
+SSOT : identité, contact, `legal`, intégrations, nav, `serviceSchemas`, assets OG, `styles.*`.
+
+### `legal.host` (mentions légales)
+
+Hébergeur centralisé dans `site.js` — consommé par `mentions-legales.astro` :
+
+```js
+legal: {
+  // … siret, copyrightYear, etc.
+  host: {
+    name: 'Cloudflare Pages',
+    company: 'Cloudflare, Inc.',
+    address: '101 Townsend St, San Francisco, CA 94107, USA',
+  },
+},
+```
+
+Ne pas dupliquer ces valeurs dans la page : toujours `{site.legal.host.name}`, `.company`, `.address`.
+
+## Intégrations externes
+
+| Service | Usage | Hors scope |
+|---------|-------|------------|
+| Formspree | Formulaire contact (fetch JS + honeypot `_gotcha`) → `/merci` | Backend custom |
+
+## SEO
+
+Chaque page : `title` + `description` via `Layout` ou `PageLayout`.
+
+- Portrait hero (`index.astro`) ≠ image OG (`/og-image.webp`) — OG = partage social uniquement
+- `serviceSchemas` dans `site.js` pour JSON-LD Service sur les 4 pages métier
+- Sitemap : `/merci` exclu (`astro.config.mjs`)
 
 ## Identité visuelle (logos)
 
